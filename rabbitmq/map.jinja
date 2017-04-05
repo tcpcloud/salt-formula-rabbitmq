@@ -1,5 +1,9 @@
 
 {% set server = salt['grains.filter_by']({
+    'default': {
+        'collect_statistics_interval': 30000,
+        'rates_mode': 'none',
+    },
     'Arch': {
         'pkgs': ['rabbitmq'],
         'service': 'rabbitmq',
@@ -67,7 +71,7 @@
             },
         },
     },
-}, merge=pillar.rabbitmq.get('server', {})) %}
+}, merge=pillar.rabbitmq.get('server', {}), base='default') %}
 
 {% set cluster = pillar.rabbitmq.get('cluster', {}) %}
 
