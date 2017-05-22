@@ -28,6 +28,7 @@ parameters:
       role: ${_param:rabbitmq_cluster_role}
       master: ${_param:cluster_node01_hostname}
       mode: disc
+      partition_handling: autoheal
       members:
       - name: ${_param:cluster_node01_hostname}
         host: ${_param:cluster_node01_address}
