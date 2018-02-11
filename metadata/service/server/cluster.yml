@@ -18,7 +18,6 @@ parameters:
           address: ${_param:cluster_local_address}
           port: 15672
       plugins:
-      - amqp_client
       - rabbitmq_management
       admin:
         name: admin

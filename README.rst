@@ -25,7 +25,6 @@ RabbitMQ as AMQP broker with admin user and vhosts
           name: adminuser
           password: pwd
         plugins:
-        - amqp_client
         - rabbitmq_management
         host:
           '/monitor':
